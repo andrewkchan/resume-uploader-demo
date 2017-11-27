@@ -29,7 +29,7 @@ def s3_upload(source_file, upload_dir=None, acl='public-read'):
     destination_filename = uuid4().hex + source_extension
 
     # Connect to S3 and upload file.
-    s3 = boto3.client(“s3”)
+    s3 = boto3.client('s3')
     bucket_name = "application-resumes"
     s3.upload_file(source_filename, bucket_name, destination_filename)
 
