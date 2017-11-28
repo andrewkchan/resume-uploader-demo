@@ -15,7 +15,7 @@ class UploadForm(Form):
 def upload_page():
     form = UploadForm()
     if form.validate_on_submit():
-        output = s3_upload(form.example)
+        output = s3_upload(form.example.data)
         flash('{src} uploaded to S3 as {dst}'.format(src=form.example.data.filename, dst=output))
     return render_template('example.html', form=form)
 
